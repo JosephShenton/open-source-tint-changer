@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>Open Source Tint Color Changer</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.css"></link>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/css/framework7.ios.colors.css"></link>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+</head>
+<body>
+ <!-- Status bar overlay for full screen mode (PhoneGap) -->
+    <div class="statusbar-overlay"></div>
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view, should have "view-main" class -->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <!-- We need cool sliding animation on title element, so we have additional "sliding" class -->
+            <div class="center sliding">Open Source Tint Color Changer</div>
+          </div>
+        </div>
+        <!-- Pages container, because we use fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through">
+          <!-- Page, "data-page" contains page name -->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content -->
+            <div class="page-content">     <center>
+<h1>Open Source Tint Color Changer</h1>
+<p><input type="text" id="inputStyle"  placeholder="Enter colour here" />
+<button id="style">Change</button></p>
+
+<script type="text/javascript">
+
+if (typeof (localStorage) == 'undefined') {
+    myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Tint Color By TeamiHackify');
+} else {
+    if (localStorage.getItem("color") != null) {
+        getColour = localStorage.color;
+        $('a').css('color', getColour);
+    }                          
+}
+$("#style").click(function () {
+    setColour = $("input#inputStyle").val();
+    if (setColour == "") {
+        myApp.alert('You never entered anything!', 'Open Source Tint Color By TeamiHackify');
+        return;
+    }
+    localStorage.removeItem('color');
+    $('a').css('color', setColour);
+    localStorage.setItem("color", setColour);
+    myApp.alert('Tint colour ' + setColour + ' saved', 'Open Source Tint Color By TeamiHackify');
+});
+</script>
+<a href="#">I CHANGE BRO!</a>
+<noscript>Your browser does not support JavaScript or it has been disabled!  So you can't use this colour changer</noscript>
+</div>
+          </div>
+        </div>
+        <!-- Bottom Toolbar-->
+        <div class="toolbar">
+          <div class="toolbar-inner">
+            <!-- Toolbar links -->
+            <a href="#" class="link">Link 1</a>
+            <a href="#" class="link">Link 2</a>
+          </div>
+        </div>
+      </div>
+    </div>     </center>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/framework7/1.4.2/js/framework7.js"></script>
+    <script>
+      var myApp = new Framework7();
+
+      var $$ = Dom7;
+
+    </script>
+</body>
+</html>
