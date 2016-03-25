@@ -30,22 +30,154 @@
           <div data-page="index" class="page">
             <!-- Scrollable page content -->
             <div class="page-content">     <center>
-<h1>Open Source Tint Color Changer</h1>
-<p><input type="text" id="inputStyle"  placeholder="Enter colour here" />
-<button id="style">Change</button></p>
+<h1>Open Source Custom Theme Changer</h1>
+ <center> <h3><a href="#" class="close-popup color-blue"><strong> I CHANGE!!!</strong></a></h3></center>
+             <div class="content-block-title">Custom Theme Options</div>
+              <div class="list-block store-data">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Tint</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <input type="text" id="tintStyle"  placeholder="Enter Color/Hex Here" />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Change</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <button class="button" id="tstyle">Change</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="list-block store-data">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Nav/Search bar</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <input type="text" id="navbarStyle"  placeholder="Enter Color/Hex Here" />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Change</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <button class="button" id="navstyle">Change</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="list-block store-data">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Tab Bar</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <input type="text" id="tabbarStyle"  placeholder="Enter Color/Hex Here" />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Change</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <button class="button" id="tabstyle">Change</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="list-block store-data">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Background</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <input type="text" id="backgroundStyle"  placeholder="Enter Color/Hex Here" />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Change</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <button class="button" id="bgstyle">Change</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+<div class="list-block store-data">
+  <ul>
+    <li>
+      <div class="item-content">
+        <div class="item-inner">
+          <div class="item-title label">Font Color</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <input type="text" id="colorStyle"  placeholder="Enter Color/Hex Here" />
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <div class="item-content"> 
+        <div class="item-inner">
+          <div class="item-title label">Change</div>
+          <div class="item-input">
+            <!-- Make sure that input have "name attrobute" -->
+            <button class="button" id="fontstyle">Change</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
 
 <script type="text/javascript">
+// Custom Design Scripts Start
 
+// Custom Tint Start
 if (typeof (localStorage) == 'undefined') {
     myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Tint Color By TeamiHackify');
 } else {
     if (localStorage.getItem("color") != null) {
         getColour = localStorage.color;
         $('a').css('color', getColour);
-    }                          
+    }
 }
-$("#style").click(function () {
-    setColour = $("input#inputStyle").val();
+$("#tstyle").click(function () {
+    setColour = $("input#tintStyle").val();
     if (setColour == "") {
         myApp.alert('You never entered anything!', 'Open Source Tint Color By TeamiHackify');
         return;
@@ -55,6 +187,97 @@ $("#style").click(function () {
     localStorage.setItem("color", setColour);
     myApp.alert('Tint colour ' + setColour + ' saved', 'Open Source Tint Color By TeamiHackify');
 });
+// Custom Tint End
+
+// Custom Navbar Start
+if (typeof (localStorage) == 'undefined') {
+    myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Navbar/Search Bar Color By TeamiHackify');
+} else {
+    if (localStorage.getItem("background") != null) {
+        getColour = localStorage.background;
+        $('.navbar, .subnavbar, .searchbar').css('background', getColour);
+    }
+}
+$("#navstyle").click(function () {
+    setColour = $("input#navbarStyle").val();
+    if (setColour == "") {
+        myApp.alert('You never entered anything!', 'Open Source Navbar/Search Bar Color By TeamiHackify');
+        return;
+    }
+    localStorage.removeItem('background');
+    $('.navbar, .subnavbar, .searchbar').css('background', setColour);
+    localStorage.setItem("background", setColour);
+    myApp.alert('Navbar and Search Bar colour ' + setColour + ' saved', 'Open Source Navbar/Search Bar Color By TeamiHackify');
+});
+// Custom Navbar End
+
+// Custom Tab Bar Start
+if (typeof (localStorage) == 'undefined') {
+    myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Tab Bar Color By TeamiHackify');
+} else {
+    if (localStorage.getItem("background1") != null) {
+        getColour = localStorage.background1;
+        $('.tabbar').css('background', getColour);
+    }
+}
+$("#tabstyle").click(function () {
+    setColour = $("input#tabbarStyle").val();
+    if (setColour == "") {
+        myApp.alert('You never entered anything!', 'Open Source Tab Bar Color By TeamiHackify');
+        return;
+    }
+    localStorage.removeItem('background1');
+    $('.tabbar').css('background', setColour);
+    localStorage.setItem("background1", setColour);
+    myApp.alert('Tab Bar colour ' + setColour + ' saved', 'Open Source Tab Bar Color By TeamiHackify');
+});
+// Custom Tab Bar End
+
+// Custom Background Start
+if (typeof (localStorage) == 'undefined') {
+    myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Background Color By TeamiHackify');
+} else {
+    if (localStorage.getItem("background2") != null) {
+        getColour = localStorage.background2;
+        $('.page').css('background', getColour);
+    }
+}
+$("#bgstyle").click(function () {
+    setColour = $("input#backgroundStyle").val();
+    if (setColour == "") {
+        myApp.alert('You never entered anything!', 'Open Source Background Color By TeamiHackify');
+        return;
+    }
+    localStorage.removeItem('background2');
+    $('.page').css('background', setColour);
+    localStorage.setItem("background2", setColour);
+    myApp.alert('Background colour ' + setColour + ' saved', 'Open Source Background Color By TeamiHackify');
+});
+// Custom Background End
+
+// Custom Font Color Start
+if (typeof (localStorage) == 'undefined') {
+    myApp.alert('Your browser does not support HTML5 localStorage. Try upgrading.', 'Open Source Background Color By TeamiHackify');
+} else {
+    if (localStorage.getItem("background3") != null) {
+        getColour = localStorage.background3;
+        $('body').css('color', getColour);
+    }
+} 
+$("#fontstyle").click(function () {
+    setColour = $("input#colorStyle").val();
+    if (setColour == "") {
+        myApp.alert('You never entered anything!', 'Open Source Font Color By TeamiHackify');
+        return;
+    }
+    localStorage.removeItem('background3');
+    $('body').css('color', setColour);
+    localStorage.setItem("background3", setColour);
+    myApp.alert('Font colour ' + setColour + ' saved', 'Open Source Font Color By TeamiHackify');
+});
+// Custom Font Color End
+
+// Custom Design Scripts End
 </script>
 <a href="#">I CHANGE BRO!</a>
 <noscript>Your browser does not support JavaScript or it has been disabled!  So you can't use this colour changer</noscript>
