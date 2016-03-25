@@ -217,7 +217,7 @@ if (typeof (localStorage) == 'undefined') {
 } else {
     if (localStorage.getItem("background1") != null) {
         getColour = localStorage.background1;
-        $('.tabbar').css('background', getColour);
+        $('.tabbar, .toolbar').css('background', getColour);
     }
 }
 $("#tabstyle").click(function () {
@@ -227,7 +227,7 @@ $("#tabstyle").click(function () {
         return;
     }
     localStorage.removeItem('background1');
-    $('.tabbar').css('background', setColour);
+    $('.tabbar, .toolbar').css('background', setColour);
     localStorage.setItem("background1", setColour);
     myApp.alert('Tab Bar colour ' + setColour + ' saved', 'Open Source Tab Bar Color By TeamiHackify');
 });
